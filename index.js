@@ -34,7 +34,7 @@ function resetGuest(points) { //mengatur ulang poin dari score Guess
 }
 
 let Timer;
-let timeLeft = 10 * 60; //menetapkan waktu hitung mundur dari 10 menit 60 detik.
+let timeLeft = 20 * 60; //menetapkan waktu hitung mundur dari 10 menit 60 detik.
 
 function startTimer() { //untuk memulai, menghentikan, dan mengatur ulang timer.
   clearInterval(Timer); // prevent multiple timers
@@ -58,8 +58,8 @@ function stopTimer() { //menjeda/menghentikan timer
 
 function resetTimer() {
     clearInterval(Timer); //untuk mengatur ulang timer
-    timeLeft = 10 * 60;
-    document.getElementById("timer").innerText = "10:00";
+    timeLeft = 20 * 60;
+    document.getElementById("timer").innerText = "20:00";
 }
 
 
