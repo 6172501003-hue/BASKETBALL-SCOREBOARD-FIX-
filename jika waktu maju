@@ -1,0 +1,29 @@
+#let Timer;
+#// Ganti 'timeLeft' menjadi 'timeElapsed' dan mulai dari 0
+#let timeElapsed = 0; //variabel untuk menyimpan waktu yang sudah berjalan (dalam detik)
+
+#function startTimer() { //untuk memulai atau melanjutkan timer hitung maju
+  #clearInterval(Timer); // mencegah beberapa timer berjalan bersamaan
+    #Timer = setInterval(() => {
+    
+    #// Tambah waktu 1 detik (hitung maju)
+    #timeElapsed++; 
+    
+    #let minutes = Math.floor(timeElapsed / 60);
+    #let seconds = timeElapsed % 60; //Mengambil sisa hasil bagi
+
+    #document.getElementById("timer").innerText =
+        #`${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+        
+    #}, 1000); // Interval waktu 1 detik
+#} 
+
+#function stopTimer() { //menjeda/menghentikan timer (Fungsi ini sudah benar)
+    #clearInterval(Timer);
+#}
+
+#function resetTimer() {
+    #clearInterval(Timer); //untuk menghentikan timer
+    #timeElapsed = 0; // Mengatur ulang waktu kembali ke 0
+    #document.getElementById("timer").innerText = "00:00"; // Mengatur ulang tampilan
+#}
